@@ -17,6 +17,17 @@ const transporter = nodemailer.createTransport({
 });
 
 export default async function sendEmail(req: VercelRequest, res: VercelResponse) {
+  // Adicionar cabeçalhos CORS para todas as requisições
+  res.setHeader('Access-Control-Allow-Origin', '*'); // Em produção, especifique o domínio específico
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS'); // Permite métodos POST e OPTIONS
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type'); // Permite o cabeçalho Content-Type
+
+  if (req.method === 'OPTIONS') {
+    // Requisição de pré-verificação (preflight request)
+    res.status(204).end();
+    return;
+  }
+
   if (req.method === 'POST') {
     const { name, email, phone, serviceCategory } = req.body;
 
