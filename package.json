@@ -4,7 +4,8 @@
   "main": "src/api/send-email.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev src/api/send-email.ts"
+    "dev": "ts-node-dev src/api/send-email.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
