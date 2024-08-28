@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/api/send-email.ts",
+      "use": "@vercel/node"
+    }
+  ]
+}
